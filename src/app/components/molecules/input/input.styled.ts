@@ -36,7 +36,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledErrorText = styled.p`
-  ${tw`text-xs italic py-1`}
+  ${tw`text-xs italic`}
   color: red;
 `;
 
