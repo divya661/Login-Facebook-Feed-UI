@@ -9,7 +9,9 @@ type TextSizeType =
   | "md"
   | "lg"
   | "xl"
-  | "2xl";
+  | "2xl"
+  | "3xl" 
+  | "4xl";
 
 interface TextProps {
   children: any
@@ -35,7 +37,7 @@ const Text: FunctionComponent<TextProps> = ({
   cursor = "default",
   fontWeight = "400",
   isXXSmallAllUppercase = true,
-  lineHeight = "",
+  lineHeight = "normal",
   marginBottom = "0",
   marginTop = "0",
   size = "md",
