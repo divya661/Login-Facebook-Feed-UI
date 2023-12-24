@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import { CardProps } from './Card';
 
 const StyledCardContainer = styled.div<Required<CardProps>>`
+   box-sizing: border-box;
    background-color: ${({ backgroundColor }) => backgroundColor ? backgroundColor : "white"};
    border-width: ${({ borderWidth }) => borderWidth};
    border-color: ${({ borderColor }) => borderColor};
