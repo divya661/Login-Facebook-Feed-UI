@@ -23,7 +23,7 @@ const Login = () => {
 
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        // Route to feed page on submit button click on enter of valid username/email & password
         router.push("feed");
     };
 
