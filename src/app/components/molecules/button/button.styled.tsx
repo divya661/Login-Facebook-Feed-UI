@@ -10,6 +10,11 @@ const StyledButton = styled.button<Required<ButtonProps>>`
    border-color?: ${({ borderColor }) => borderColor};
    border-width?: ${({ borderWidth }) => borderWidth};
    background-color: ${({ backGroundColor }) => backGroundColor};
+
+   &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed; 
+   }
 `;
 
 export { StyledButton };

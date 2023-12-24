@@ -12,6 +12,7 @@ type ButtonProps = {
     borderRadius: string;
     borderColor?: string;
     borderWidth?: string;
+    disabled?: boolean;
     onClick: MouseEventHandler<Element>;
     type: "button" | "submit" | "reset";
 }
@@ -27,11 +28,12 @@ const Button: FunctionComponent<ButtonProps> = ({
     borderColor,
     borderWidth,
     type,
+    disabled=false,
     onClick,
     ...props
 }) => {
     return (
-        <StyledButton type={type} onClick={onClick} width={width} height={height} backGroundColor={backGroundColor} margin={margin} padding={padding} borderRadius={borderRadius} borderColor={borderColor ?? "inherit"} borderWidth={borderWidth ?? "0"} {...props}>
+        <StyledButton disabled={disabled} type={type} onClick={onClick} width={width} height={height} backGroundColor={backGroundColor} margin={margin} padding={padding} borderRadius={borderRadius} borderColor={borderColor ?? "inherit"} borderWidth={borderWidth ?? "0"} {...props}>
             {children}
         </StyledButton>
     );

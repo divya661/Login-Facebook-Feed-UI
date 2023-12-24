@@ -8,6 +8,7 @@ import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_Or_Email_MAX_LENGTH,
 import { validatePassword, validateUsernameOrEmail } from "@/app/utils/validate_login";
 import { Button } from "@/app/components/molecules/button";
 import { InputType } from "@/app/enums/input";
+import { useRouter } from "next/navigation";
 
 
 const Login = () => {
@@ -17,12 +18,13 @@ const Login = () => {
     const [errorPassword, setErrorPassword] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [passwordInputType, setPasswordInputType] = useState<string>(InputType.Password);
+   
+    const router = useRouter();
 
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        // TODO: make api call for login user
-        // Not part of the task
+        router.push("feed");
     };
 
     const handleUsernameOrEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -79,7 +81,7 @@ const Login = () => {
                         errorMessage={errorUsernameOrEmail}
                         required={false}
                         type="text"
-                        autoComplete="true"
+                        autoComplete="false"
                         minLength={USERNAME_Or_Email_MIN_LENGTH}
                         maxLength={USERNAME_Or_Email_MAX_LENGTH}
                         autoFocus={true}
@@ -95,7 +97,7 @@ const Login = () => {
                         errorMessage={errorPassword}
                         required={false}
                         type={passwordInputType}
-                        autoComplete="true"
+                        autoComplete="false"
                         minLength={PASSWORD_MIN_LENGTH}
                         maxLength={PASSWORD_MAX_LENGTH}
                         autoFocus={false}
@@ -110,7 +112,7 @@ const Login = () => {
                         }}
                         helpOrInfoLink={{ text: "Forgot Password?", href: "/forgotPassword", style: { color: "#C5C7CA", textDecoration: "none", fontWeight: "500", size: "xs" } }}
                     />
-                    <Button onClick={(e) => { }} type="submit" width="100%" height="43px" backGroundColor="#4A96FF" borderRadius="4px" padding="12px" margin="10px 0 10px 0">
+                    <Button onClick={(e) => { }} disabled={!!(errorPassword || errorUsernameOrEmail)} type="submit" width="100%" height="43px" backGroundColor="#4A96FF" borderRadius="4px" padding="12px" margin="10px 0 10px 0">
                         <Text color="#FFF" fontWeight="500" size="md" textAlign="center" display="inline-block">
                             Login Now
                         </Text>
