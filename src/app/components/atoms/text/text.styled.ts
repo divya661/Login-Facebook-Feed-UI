@@ -21,7 +21,7 @@ const StyledText = styled.p<Required<TextProps>>`
   color: ${({ color }) => color};
   cursor: ${({ cursor }) => cursor};
   font-size: ${({ size }) => fontSizes[size]};
-  line-height: "normal";
+  line-height:${({ lineHeight }) => lineHeight};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
   margin-bottom: ${({ marginBottom }) => marginBottom ?? "0"};
   margin-top: ${({ marginTop }) => marginTop ?? "0"};
