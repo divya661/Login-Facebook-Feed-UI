@@ -45,7 +45,7 @@ const Avatar = ({
   };
 
   return (
-        <StyledAvatarContainer size={size}>{renderContent()}</StyledAvatarContainer>
+    <StyledAvatarContainer size={size}>{renderContent()}</StyledAvatarContainer>
   );
 };
 
