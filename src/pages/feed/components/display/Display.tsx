@@ -10,7 +10,7 @@ function Display() {
     const renderItem = (item: FeedItemProps) => {
         const postKey = item.personName + '_' + item.postTime;
         return (
-            <StyledDisplay id={'feed-display_'+postKey}>
+            <StyledDisplay id={'feed-display_'+postKey} key={'feed-display_'+postKey}>
             <List.Item id={postKey} key={postKey}>
                 <FeedItem {...item} />
             </List.Item>
