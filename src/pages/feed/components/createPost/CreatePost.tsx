@@ -6,6 +6,7 @@ import { Input } from "@/components/molecules/input";
 import { Button } from "@/components/molecules/button";
 import { ERROR_POST_CONTENT_MIN_LENGTH, POST_CONTENT_MIN_LENGTH } from "@/constants/post";
 import { Form } from "@/components/molecules/form";
+import { StyledCreatePost } from "./createPost.styled";
 
 function CreatePost() {
     const [postContent, setPostContent] = useState<string>("");
@@ -30,7 +31,8 @@ function CreatePost() {
     }
 
     return (
-        <Form onSubmit={submit}>
+        <StyledCreatePost id="create-post">
+        <Form onSubmit={submit} width="100%">
             <Card width="100%" height="223px" borderRadius="8px" border="2px solid #35373B" paddingX="20px" paddingY="24px" backgroundColor="#27292D">
 
                 <Input
@@ -76,6 +78,7 @@ function CreatePost() {
 
             </Card>
         </Form>
+        </StyledCreatePost>
     );
 }
 
