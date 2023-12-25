@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Text } from "@/components/atoms/text";
 import { Card } from "@/components/molecules/card";
@@ -7,11 +8,10 @@ import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_Or_Email_MAX_LENGTH,
 import { validatePassword, validateUsernameOrEmail } from "@/utils/validate_login";
 import { Button } from "@/components/molecules/button";
 import { InputType } from "@/enums/input";
-import { useRouter } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Form } from "@/components/molecules/form";
-import {LogoContainer} from "./logoContainer/LogoContainer";
-import { Header } from "./header";
+import LogoContainer from "./logoContainer/LogoContainer";
+import  Header from "./header";
 import { Container } from "@/components/molecules/container";
 
 const Login = () => {
@@ -70,10 +70,10 @@ const Login = () => {
     const textTeriatryColor = theme.components.page.colors.text.teriatry;
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen w-screen bg-theme-black ">
+        <Container display="flex"  flexDirection="column" backgroundColor={backgroundPrimaryColor} height="100vh" width="100vw" justifyContent="center" alignItems="center">
             <LogoContainer marginBottom="49px"></LogoContainer>
-            <Form onSubmit={submit}>
-                <Card backgroundColor={backgroundSecondaryColor} border="2px solid #969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
+            <Form width="463px" onSubmit={submit}>
+                <Card backgroundColor={backgroundSecondaryColor} border="2px solid #969696" borderRadius="8px" width="inherit" height="420px" paddingY="38px" paddingX="24px" >
                   <Header paddingBottom="30px" textTeriatryColor={textTeriatryColor}></Header>
                     <Input
                         id="Username"
@@ -119,13 +119,13 @@ const Login = () => {
                             Login Now
                         </Text>
                     </Button>
-                    <Container display="block">
+                    <Container display="block" width="100%">
                         <Text color={textSecondaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Not registered yet? </Text>
                         <Text color={textPrimaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Register →</Text>
                     </Container>
                 </Card>
             </Form>
-        </div>
+        </Container>
     );
 };
 
