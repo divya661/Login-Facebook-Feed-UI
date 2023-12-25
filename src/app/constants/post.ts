@@ -1,0 +1,1 @@
+export const POST_CONTENT_MIN_LENGTH=10;
