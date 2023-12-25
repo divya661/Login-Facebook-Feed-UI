@@ -19,16 +19,14 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-twin": "^1.1.0",
-    "husky": "^8.0.3",
     "lodash": "^4.17.21",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^4.12.0",
-    "twin.macro": "^3.4.0"
-  },
+    "react-dom": "^18"
+    },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "latest",
+    "husky": "^8.0.3",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -36,6 +34,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.0",
