@@ -11,6 +11,7 @@ type CardProps = {
   paddingX?: string;
   marginY?: string;
   marginX?: string;
+  flexDirection?: string;
 };
 
 const Card = ({
@@ -24,6 +25,7 @@ const Card = ({
   paddingX = "0",
   marginY = "0",
   marginX = "0",
+  flexDirection="column",
   ...props
 }: CardProps) => {
   return (
@@ -37,6 +39,7 @@ const Card = ({
       paddingY={paddingY}
       marginX={marginX}
       marginY={marginY}
+      flexDirection={flexDirection}
       {...props}>{children}</StyledCardContainer>
   );
 };

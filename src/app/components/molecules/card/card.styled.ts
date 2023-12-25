@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
-import tw from "twin.macro";
 
 import { CardProps } from './Card';
 
 const StyledCardContainer = styled.div<Required<CardProps>>`
    box-sizing: border-box;
    display: flex;
-   flex-direction: column;
+   flex-direction: ${({flexDirection}) => flexDirection};
    flex-shrink:0;
    background-color: ${({ backgroundColor }) => backgroundColor ? backgroundColor : "white"};
    border: ${({ border }) => border};
