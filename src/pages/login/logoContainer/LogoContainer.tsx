@@ -18,5 +18,5 @@ const LogoContainer= ({
     )
 };
 
-export { LogoContainer };
+export default LogoContainer;
 export type { LogoContainerProps };
