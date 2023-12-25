@@ -41,7 +41,7 @@ export const mockFeed = [
   },
   {
     avatar: "avatar2.png",
-    personName: "Bob Johnson",
+    personName: "John Smith",
     postTime: "10 hours ago",
     edited: false,
     content: "Feeling motivated to start a new project! 💪",
