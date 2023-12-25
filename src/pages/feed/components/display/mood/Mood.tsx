@@ -32,6 +32,6 @@ const Mood = ({
   );
 };
 
-export { Mood };
+export default  Mood;
 export type { MoodProps };
 
