@@ -18,11 +18,10 @@ const StyledContainer =
   padding-bottom: ${({ paddingBottom }) => paddingBottom};
   padding-left: ${({ paddingLeft }) => paddingLeft};
   padding-right: ${({ paddingRight }) => paddingRight};
-  margin-top: ${({ marginY }) => marginY};
-  margin-bottom: ${({ marginY }) => marginY};
-  margin-bottom: ${({ marginY }) => marginY};
-  margin-left: ${({ marginX }) => marginX};
-  margin-right: ${({ marginX }) => marginX};
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-left: ${({ marginLeft }) => marginLeft};
+  margin-right: ${({ marginRight }) => marginRight};
 
   ${({ display, flexDirection, justifyContent, alignItems }) =>
     display === "flex" &&

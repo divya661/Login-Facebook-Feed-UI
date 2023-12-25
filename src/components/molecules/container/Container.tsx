@@ -11,8 +11,10 @@ type ContainerProps = {
   paddingBottom?: string;
   paddingLeft?: string;
   paddingRight?: string;
-  marginY?: string;
-  marginX?: string;
+  marginTop?: string;
+  marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
   display?: string;
   flexDirection?: string;
   justifyContent?: string;
@@ -30,8 +32,10 @@ const Container = ({
   paddingBottom = "0",
   paddingLeft = "0",
   paddingRight = "0",
-  marginY = "0",
-  marginX = "0",
+  marginTop = "0",
+  marginBottom = "0",
+  marginLeft = "0",
+  marginRight = "0",
   display = "flex",
   flexDirection = "column",
   justifyContent="start",
@@ -49,8 +53,10 @@ const Container = ({
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
       paddingRight={paddingRight}
-      marginX={marginX}
-      marginY={marginY}
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+      marginLeft={marginLeft}
+      marginRight={marginRight}
       display={display}
       flexDirection={flexDirection}
       justifyContent={justifyContent}
