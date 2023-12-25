@@ -15,6 +15,8 @@ type ContainerProps = {
   marginX?: string;
   display?: string;
   flexDirection?: string;
+  justifyContent?: string;
+  alignItems?: string;
 };
 
 const Container = ({
@@ -32,6 +34,8 @@ const Container = ({
   marginX = "0",
   display = "flex",
   flexDirection = "column",
+  justifyContent="start",
+  alignItems = "start",
   ...props
 }: ContainerProps) => {
   return (
@@ -49,6 +53,8 @@ const Container = ({
       marginY={marginY}
       display={display}
       flexDirection={flexDirection}
+      justifyContent={justifyContent}
+      alignItems={alignItems}
       {...props}>{children}</StyledContainer>
   );
 };

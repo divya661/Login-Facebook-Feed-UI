@@ -9,8 +9,6 @@ const StyledContainer =
     `
   box-sizing: border-box;
   display: ${({ display }) => display};
-  flex-direction: ${({ flexDirection }) => flexDirection};
-  flex-shrink:0;
   background-color: ${({ backgroundColor }) => (backgroundColor ? backgroundColor : "white")};
   border: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};
@@ -25,6 +23,15 @@ const StyledContainer =
   margin-bottom: ${({ marginY }) => marginY};
   margin-left: ${({ marginX }) => marginX};
   margin-right: ${({ marginX }) => marginX};
+
+  ${({ display, flexDirection, justifyContent, alignItems }) =>
+    display === "flex" &&
+    `
+    flex-direction: ${flexDirection};
+    justify-content: ${justifyContent};
+    align-items: ${alignItems};
+    flex-shrink: 0;
+  `}
 `;
 
 export { StyledContainer };
