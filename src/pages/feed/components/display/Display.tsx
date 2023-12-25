@@ -1,17 +1,18 @@
+import React from "react";
+
 import { List } from "@/components/molecules/list";
 import { mockFeed } from "@/utils/mock_feed";
-import React from "react";
-import  {FeedItem, FeedItemProps } from "./FeedItem";
+import { FeedItem, FeedItemProps } from "./FeedItem";
 
 
 function Display() {
     const renderItem = (item: FeedItemProps) => {
-        const postKey = item.personName+'_'+item.postTime;
+        const postKey = item.personName + '_' + item.postTime;
         return (
             <List.Item id={postKey} key={postKey}>
-             <FeedItem {...item} />
+                <FeedItem {...item} />
             </List.Item>
-          );
+        );
     };
 
     return (
@@ -19,6 +20,5 @@ function Display() {
 
     );
 }
-  
+
 export default Display;
-  
