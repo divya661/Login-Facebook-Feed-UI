@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import tw from "twin.macro";
+
 import { fontSizes } from '../../atoms/text/text.styled';
 import { StyleLabelProps } from './Input';
 
 const StyledInputContainer = styled.div<{height:string,fontSize:string}>`
-   width: 100%;
-   height: ${({height,fontSize})=> `calc(${height} + ${fontSizes[fontSize]})`};
-   flex-shrink: 0;
-   margin-bottom: 16px;
-   border-radius: 4px;
+  width: 100%;
+  height: ${({height,fontSize})=> `calc(${height} + ${fontSizes[fontSize]})`};
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  border-radius: 4px;
 `;
 
 const StyledLabel = styled.label<Required<StyleLabelProps>>`
@@ -27,25 +27,26 @@ const StyledInput = styled.input<{
   margin:string;
   padding:string;
 }>`
-   color: #7F8084;
-   font-size: 16px;
-   font-style: normal;
-   background-color: ${({ backgroundColor }) => backgroundColor ?? "inherit"};
-   font-weight: 400;
-   line-height: normal;
-   width: 100%;
-   height: ${({ height }) => height};
-   flex-shrink: 0;
-   border-radius: ${({ borderRadius }) => borderRadius};
-   border: 1.5px solid #35373B;
-   padding:${({ padding }) => padding ?? "12px"};
-   margin: ${({ margin }) => margin ?? "10px 0 0 0"};
-   display:flex;
+  color: #7F8084;
+  font-size: 16px;
+  font-style: normal;
+  background-color: ${({ backgroundColor }) => backgroundColor ?? "inherit"};
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  height: ${({ height }) => height};
+  flex-shrink: 0;
+  border-radius: ${({ borderRadius }) => borderRadius};
+  border: 1.5px solid #35373B;
+  padding:${({ padding }) => padding ?? "12px"};
+  margin: ${({ margin }) => margin ?? "10px 0 0 0"};
+  display:flex;
 `;
 
 const StyledErrorText = styled.p`
-  ${tw`text-xs italic`}
   color: red;
+  font-size: 0.75rem;
+  font-style: italic;
 `;
 
 
