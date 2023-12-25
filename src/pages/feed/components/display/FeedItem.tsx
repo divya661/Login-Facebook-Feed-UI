@@ -1,11 +1,11 @@
 import React from "react";
 import Image from 'next/image';
 
-import { Avatar } from "@/app/components/atoms/avatar";
-import { Button } from "@/app/components/molecules/button";
-import { Card } from "@/app/components/molecules/card";
-import { Text } from "@/app/components/atoms/text";
-import { Feeling } from "./feeling/Feeling";
+import { Avatar } from "@/components/atoms/avatar";
+import { Button } from "@/components/molecules/button";
+import { Card } from "@/components/molecules/card";
+import { Text } from "@/components/atoms/text";
+import { Feeling } from "./mood/Mood";
 
 type FeedItemProps = {
     avatar: string;
@@ -17,7 +17,7 @@ type FeedItemProps = {
     feelingIcon: string;
 }
 const FeedItem = ({ avatar, personName, postTime, edited, content, commentsCount, feelingIcon }: FeedItemProps) => {
-
+    const theme = useTheme();
     return (
         <Card width="100%" height="250px" borderRadius="8px" border="2px solid #35373B" paddingX="20px" paddingY="24px" backgroundColor="#27292D">
 

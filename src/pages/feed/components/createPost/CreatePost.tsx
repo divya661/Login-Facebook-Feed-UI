@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
-import { Card } from "@/app/components/molecules/card";
-import { Text } from "@/app/components/atoms/text";
-import { Input } from "@/app/components/molecules/input";
-import { Button } from "@/app/components/molecules/button";
-import { ERROR_POST_CONTENT_MIN_LENGTH, POST_CONTENT_MIN_LENGTH } from "@/app/constants/post";
+import { Card } from "@/components/molecules/card";
+import { Text } from "@/components/atoms/text";
+import { Input } from "@/components/molecules/input";
+import { Button } from "@/components/molecules/button";
+import { ERROR_POST_CONTENT_MIN_LENGTH, POST_CONTENT_MIN_LENGTH } from "@/constants/post";
 
 function CreatePost() {
     const [postContent, setPostContent] = useState<string>("");

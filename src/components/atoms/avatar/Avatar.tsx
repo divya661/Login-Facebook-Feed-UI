@@ -1,5 +1,4 @@
 import { StyledAvatarContainer, StyledAvatarImage } from "./avatar.styled";
-import ThemeContext from "@/app/contexts/ThemeContext";
 import { TextSizeType, Text } from "../text";
 
 type AvatarSizes = "xs" | "sm" | "md" | "lg" | "xl";
@@ -46,11 +45,7 @@ const Avatar = ({
   };
 
   return (
-    <ThemeContext.Consumer>
-      {(theme) => (
-        <StyledAvatarContainer size={size} theme={theme}>{renderContent()}</StyledAvatarContainer>
-      )}
-    </ThemeContext.Consumer>
+        <StyledAvatarContainer size={size}>{renderContent()}</StyledAvatarContainer>
   );
 };
 

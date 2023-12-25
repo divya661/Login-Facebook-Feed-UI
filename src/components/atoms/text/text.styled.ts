@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "@emotion/styled";
 
 import { TextProps } from "./Text";
-import { KeyValue } from "@/app/interfaces/global";
+import { KeyValue } from "@/interfaces/global";
 
 const fontSizes: KeyValue = {
   xs: "12px",
@@ -17,6 +17,7 @@ const fontSizes: KeyValue = {
 
 const StyledText = styled.p<Required<TextProps>>`
   max-width: 100%;
+  font-family: Inter;
   display: ${({ display }) => display};
   float: ${({ float }) => float};
   color: ${({ color }) => color};

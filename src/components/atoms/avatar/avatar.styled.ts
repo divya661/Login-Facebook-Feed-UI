@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import { AvatarSizes } from "./Avatar";
-import { Theme } from "@/app/contexts/ThemeContext";
 
 const sizes: Record<AvatarSizes, string> = {
   xs: "32px",
@@ -15,9 +14,13 @@ const sizes: Record<AvatarSizes, string> = {
 
 const getSize = (size: AvatarSizes): string => sizes[size];
 
-const StyledAvatarContainer = styled.div<{ size: AvatarSizes } & { theme: Theme }>`
-  ${tw`items-center box-border rounded-full cursor-default overflow-hidden flex`}
-  background: ${({ theme }) => theme.components.initialsAvatar.backgroundColor};
+const StyledAvatarContainer = styled.div<{ size: AvatarSizes }>`
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: default;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
   ${({ size }) => css`
     width: ${getSize(size)};
     height: ${getSize(size)};
@@ -25,7 +28,9 @@ const StyledAvatarContainer = styled.div<{ size: AvatarSizes } & { theme: Theme 
 `;
 
 const StyledAvatarImage = styled.img`
-  ${tw`w-full h-full object-cover`}
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export { StyledAvatarContainer, StyledAvatarImage };

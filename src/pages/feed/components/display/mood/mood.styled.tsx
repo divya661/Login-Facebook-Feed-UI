@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import { FeelingProps } from './Feeling';
+import { MoodProps } from './Mood';
 
-const StyledFeelingContainer = styled.div<Required<FeelingProps>>`
+const StyledMoodContainer = styled.div<Required<MoodProps>>`
    box-sizing: border-box;
    display: flex;
    justify-content: center;
@@ -19,4 +19,4 @@ const StyledFeelingContainer = styled.div<Required<FeelingProps>>`
    margin-right: ${({ marginX }) => marginX};
 `;
 
-export { StyledFeelingContainer };
+export { StyledMoodContainer };

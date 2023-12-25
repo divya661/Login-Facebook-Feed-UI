@@ -2,7 +2,7 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 
 import { ThemeProvider, useTheme } from '@emotion/react';
-import "../styles/global.css";
+import "../global.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
 

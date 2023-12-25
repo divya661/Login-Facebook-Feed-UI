@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import { LogoSizes } from "./Logo";
-import { Theme } from "@/app/contexts/ThemeContext";
+import { Theme } from "@/contexts/ThemeContext";
 
 const sizes: Record<LogoSizes, string> = {
   xs: "2.5rem",

@@ -1,5 +1,5 @@
-import { List } from "@/app/components/molecules/list";
-import { mockFeed } from "@/app/utils/mock_feed";
+import { List } from "@/components/molecules/list";
+import { mockFeed } from "@/utils/mock_feed";
 import React from "react";
 import  {FeedItem, FeedItemProps } from "./FeedItem";
 

@@ -5,7 +5,6 @@ export interface Theme {
     initialsAvatar: {
       backgroundColor: string;
     };
-    compose: {
       page: {
         colors: {
           background: {
@@ -19,14 +18,12 @@ export interface Theme {
             teriatry: string;
           }
         }
-      };
     };
   };
 }
 
 const defaultTheme: Theme = {
   components: {
-    compose: {
       page: {
         colors: {
           background: {
@@ -40,7 +37,6 @@ const defaultTheme: Theme = {
             teriatry: "#FFF",
           }
         }
-      },
     },
     initialsAvatar: {
       backgroundColor: 'black',

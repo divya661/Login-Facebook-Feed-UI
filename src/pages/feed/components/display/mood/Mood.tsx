@@ -1,6 +1,6 @@
-import { StyledFeelingContainer } from "./feeling.styled";
+import { StyledMoodContainer } from "./mood.styled";
 
-type FeelingProps = {
+type MoodProps = {
   children: any;
   backgroundColor?: string;
   border: string;
@@ -10,7 +10,7 @@ type FeelingProps = {
   marginX?: string;
 };
 
-const Feeling = ({
+const Mood = ({
   children,
   backgroundColor = "white",
   border,
@@ -19,19 +19,19 @@ const Feeling = ({
   marginY = "0",
   marginX = "0",
   ...props
-}: FeelingProps) => {
+}: MoodProps) => {
   return (
-    <StyledFeelingContainer
+    <StyledMoodContainer
       backgroundColor={backgroundColor}
       border={border}
       borderRadius={borderRadius}
       size={size}
       marginX={marginX}
       marginY={marginY}
-      {...props}>{children}</StyledFeelingContainer>
+      {...props}>{children}</StyledMoodContainer>
   );
 };
 
-export { Feeling };
-export type { FeelingProps };
+export { Mood };
+export type { MoodProps };
 

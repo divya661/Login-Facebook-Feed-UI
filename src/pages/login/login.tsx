@@ -1,14 +1,15 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
-import { Logo } from "@/app/components/atoms/logo";
-import { Text } from "@/app/components/atoms/text";
-import { Card } from "@/app/components/molecules/card";
-import { Input } from "@/app/components/molecules/input";
-import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_Or_Email_MAX_LENGTH, USERNAME_Or_Email_MIN_LENGTH } from "@/app/constants/user";
-import { validatePassword, validateUsernameOrEmail } from "@/app/utils/validate_login";
-import { Button } from "@/app/components/molecules/button";
-import { InputType } from "@/app/enums/input";
+import { Logo } from "@/components/atoms/logo";
+import { Text } from "@/components/atoms/text";
+import { Card } from "@/components/molecules/card";
+import { Input } from "@/components/molecules/input";
+import { PASSWORD_MAX_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_Or_Email_MAX_LENGTH, USERNAME_Or_Email_MIN_LENGTH } from "@/constants/user";
+import { validatePassword, validateUsernameOrEmail } from "@/utils/validate_login";
+import { Button } from "@/components/molecules/button";
+import { InputType } from "@/enums/input";
 import { useRouter } from "next/navigation";
+import { useTheme } from "@/contexts/ThemeContext";
 
 
 const Login = () => {
@@ -18,8 +19,9 @@ const Login = () => {
     const [errorPassword, setErrorPassword] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [passwordInputType, setPasswordInputType] = useState<string>(InputType.Password);
-   
+
     const router = useRouter();
+    const theme = useTheme();
 
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -59,16 +61,22 @@ const Login = () => {
         );
     }
 
+    const backgroundPrimaryColor = theme.components.page.colors.background.primary;
+    const backgroundSecondaryColor = theme.components.page.colors.background.secondary;
+    const textPrimaryColor = theme.components.page.colors.text.primary;
+    const textSecondaryColor = theme.components.page.colors.text.secondary;
+    const textTeriatryColor = theme.components.page.colors.text.teriatry;
+
     return (
         <div className="flex flex-col items-center justify-center h-screen w-screen bg-theme-black ">
             <div className="mb-[49px]">
                 <Logo />
             </div>
             <form className=" " onSubmit={submit}>
-                <Card backgroundColor="#27292D" border="2px solid #969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
+                <Card backgroundColor={backgroundSecondaryColor} border="2px solid #969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
                     <div className="pb-[30px]">
                         <Text color="#6B6C70" fontWeight="500" size="sm" textAlign="center">WELCOME BACK</Text>
-                        <Text color="white" fontWeight="600" size="lg" textAlign="center" marginTop="8px">Log into your account</Text>
+                        <Text color={textTeriatryColor} fontWeight="600" size="lg" textAlign="center" marginTop="8px">Log into your account</Text>
                     </div>
                     <Input
                         id="Username"
@@ -104,7 +112,7 @@ const Login = () => {
                                 size: "20px",
                                 margin: "-30px 10px 0 0",
                                 float: "right",
-                                fontSize:"20px"
+                                fontSize: "20px"
                             }
                         }}
                         helpOrInfoLink={{ text: "Forgot Password?", href: "/forgotPassword", style: { color: "#C5C7CA", textDecoration: "none", fontWeight: "500", size: "xs" } }}
@@ -115,8 +123,8 @@ const Login = () => {
                         </Text>
                     </Button>
                     <div className="block">
-                        <Text color="#7F8084" fontWeight="500" size="sm" textAlign="left" display="inline">Not registered yet? </Text>
-                        <Text color="#C5C7CA" fontWeight="500" size="sm" textAlign="left" display="inline">Register →</Text>
+                        <Text color={textSecondaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Not registered yet? </Text>
+                        <Text color={textPrimaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Register →</Text>
                     </div>
                 </Card>
             </form>
@@ -124,4 +132,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export { Login };
