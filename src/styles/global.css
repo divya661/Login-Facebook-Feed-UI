@@ -7,26 +7,15 @@
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-primary: "#131319";
+    --background-secondary:"#27292D";
+    --background-teriatry:"#191920";
+    --text-primary: "#C5C7CA";
+    --text-secondary: "#7F8084";
+    --text-teriatry: "#FFF";
   }
-}
+
 
 body {
   font-family: Inter;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
