@@ -10,7 +10,7 @@ type TextSizeType =
   | "lg"
   | "xl"
   | "2xl"
-  | "3xl" 
+  | "3xl"
   | "4xl";
 
 interface TextProps {
@@ -26,7 +26,7 @@ interface TextProps {
   marginTop?: string;
   size?: TextSizeType;
   textAlign?: string;
-  truncate?:boolean;
+  truncate?: boolean;
   height?: string;
   onClick?: () => void;
 }
@@ -44,8 +44,8 @@ const Text: FunctionComponent<TextProps> = ({
   marginTop = "0",
   size = "md",
   textAlign = "center",
-  truncate=false,
-  height="inherit",
+  truncate = false,
+  height = "inherit",
   onClick = () => { },
   ...props
 }) => {
