@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Card } from "@/components/molecules/card";
-import  FeedItemHeader  from "./feedItemHeader";
-import  FeedItemFooter  from "./feedItemFooter";
-import  ContentCard  from "./contentCard";
+import  FeedItemHeader  from "../feedItemHeader";
+import  FeedItemFooter  from "../feedItemFooter";
+import  ContentCard  from "../contentCard";
 
 type FeedItemProps = {
     avatar: string,
