@@ -4,27 +4,34 @@ import { Card } from "@/app/components/molecules/card";
 import { Text } from "@/app/components/atoms/text";
 import { Input } from "@/app/components/molecules/input";
 import { Button } from "@/app/components/molecules/button";
-import { POST_CONTENT_MIN_LENGTH } from "@/app/constants/post";
+import { ERROR_POST_CONTENT_MIN_LENGTH, POST_CONTENT_MIN_LENGTH } from "@/app/constants/post";
 
 function CreatePost() {
     const [postContent, setPostContent] = useState<string>("");
+    const [errorPostContent, setErrorPostContent] = useState<string>("");
 
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Route to feed page on submit button click on enter of valid username/email & password
-        alert("Post Submitted Successfully!");
-        setPostContent("");
+        if (!errorPostContent.length) {
+            alert("Post Submitted Successfully!");
+            setPostContent("");
+        }
     };
 
     const handlePostContentChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setPostContent(value);
+        if (value.length < POST_CONTENT_MIN_LENGTH) {
+            setErrorPostContent(ERROR_POST_CONTENT_MIN_LENGTH);
+        } else {
+            setErrorPostContent("");
+        }
     }
 
     return (
         <form className="flex flex-col" onSubmit={submit}>
-        <Card width="100%" height="223px" borderRadius="8px" border="2px solid #35373B" paddingX="20px" paddingY="24px" backgroundColor="#27292D">
-            
+            <Card width="100%" height="223px" borderRadius="8px" border="2px solid #35373B" paddingX="20px" paddingY="24px" backgroundColor="#27292D">
+
                 <Input
                     id="createPost"
                     name="createPost"
@@ -60,13 +67,13 @@ function CreatePost() {
                     type="text"
                     minLength={POST_CONTENT_MIN_LENGTH}
                 />
-                <Button onClick={(e) => { }} disabled={!!(postContent.length < POST_CONTENT_MIN_LENGTH)} type="submit" width="111px" height="43px" backGroundColor="#4A96FF" borderRadius="4px" padding="12px" margin="16px 0 0 0" float="right">
+                <Button onClick={(e) => { }} disabled={!!errorPostContent} type="submit" width="111px" height="43px" backGroundColor="#4A96FF" borderRadius="4px" padding="12px" margin="16px 0 0 0" float="right">
                     <Text color="#FFF" fontWeight="500" size="md" textAlign="center" display="inline-block">
                         Post
                     </Text>
                 </Button>
 
-        </Card>
+            </Card>
         </form>
     );
 }
