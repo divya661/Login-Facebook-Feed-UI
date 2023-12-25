@@ -65,7 +65,7 @@ const Login = () => {
                 <Logo />
             </div>
             <form className=" " onSubmit={submit}>
-                <Card backgroundColor="#27292D" borderWidth="2px" borderColor="#969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
+                <Card backgroundColor="#27292D" border="2px solid #969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
                     <div className="pb-[30px]">
                         <Text color="#6B6C70" fontWeight="500" size="sm" textAlign="center">WELCOME BACK</Text>
                         <Text color="white" fontWeight="600" size="lg" textAlign="center" marginTop="8px">Log into your account</Text>
@@ -81,10 +81,8 @@ const Login = () => {
                         errorMessage={errorUsernameOrEmail}
                         required={false}
                         type="text"
-                        autoComplete="false"
                         minLength={USERNAME_Or_Email_MIN_LENGTH}
                         maxLength={USERNAME_Or_Email_MAX_LENGTH}
-                        autoFocus={true}
                     />
                     <Input
                         id="Password"
@@ -97,17 +95,16 @@ const Login = () => {
                         errorMessage={errorPassword}
                         required={false}
                         type={passwordInputType}
-                        autoComplete="false"
                         minLength={PASSWORD_MIN_LENGTH}
                         maxLength={PASSWORD_MAX_LENGTH}
-                        autoFocus={false}
                         icon={{
                             icon: _getTogglePasswordIcon,
                             onClick: togglePasswordVisibility,
                             style: {
                                 size: "20px",
                                 margin: "-30px 10px 0 0",
-                                float: "right"
+                                float: "right",
+                                fontSize:"20px"
                             }
                         }}
                         helpOrInfoLink={{ text: "Forgot Password?", href: "/forgotPassword", style: { color: "#C5C7CA", textDecoration: "none", fontWeight: "500", size: "xs" } }}
