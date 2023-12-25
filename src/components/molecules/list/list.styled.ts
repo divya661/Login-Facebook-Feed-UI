@@ -1,4 +1,3 @@
-import tw from "twin.macro";
 import styled from "@emotion/styled";
 
 type StyledListProps = {
@@ -6,20 +5,25 @@ type StyledListProps = {
 };
 
 const StyledList = styled.div<StyledListProps>`
-${tw`overflow-x-hidden w-full`}
+  overflow-x: hidden;
+  width: 100%;
 `;
 
 const StyledListHeader = styled.div`
-  ${tw`py-2`}
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 const StyledListFooter = styled.div`
-  ${tw`py-2`}
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 `;
 
 const StyledListItem = styled.div`
-  ${tw`box-border pb-[16px] w-full`}
-  `;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+  width: 100%;
+`;
 
 export {
   StyledList,
