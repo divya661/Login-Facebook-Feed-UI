@@ -10,8 +10,8 @@ import { Button } from "@/components/molecules/button";
 import { InputType } from "@/enums/input";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Form } from "@/components/molecules/form";
-import LogoContainer from "./logoContainer/LogoContainer";
-import  Header from "./header";
+import LogoContainer from "../components/login/logoContainer/LogoContainer";
+import  Header from "../components/login/header";
 import { Container } from "@/components/molecules/container";
 
 const Login = () => {
@@ -130,4 +130,4 @@ const Login = () => {
     );
 };
 
-export { Login };
+export default Login;

@@ -1,10 +1,10 @@
 import React from "react";
 
-import CreatePost from "./components/createPost/CreatePost";
-import Display from "./components/display/Display";
+import CreatePost from "../../components/feed/createPost/CreatePost";
+import Display from "../../components/feed/display/Display";
 import { Container } from "@/components/molecules/container";
 import { useTheme } from "@/contexts/ThemeContext";
-import GreetUser from "./components/greetUser";
+import GreetUser from "../../components/feed/greetUser";
 
 function Feed() {
   const theme = useTheme();
@@ -21,7 +21,7 @@ function Feed() {
   );
 }
 
-export { Feed };
+export default Feed;
 
 export async function getStaticProps(context: any) {
   return {
