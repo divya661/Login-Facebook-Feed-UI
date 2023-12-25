@@ -26,6 +26,8 @@ interface TextProps {
   marginTop?: string;
   size?: TextSizeType;
   textAlign?: string;
+  truncate?:boolean;
+  height?: string;
   onClick?: () => void;
 }
 
@@ -42,6 +44,8 @@ const Text: FunctionComponent<TextProps> = ({
   marginTop = "0",
   size = "md",
   textAlign = "center",
+  truncate=false,
+  height="inherit",
   onClick = () => { },
   ...props
 }) => {
@@ -58,6 +62,8 @@ const Text: FunctionComponent<TextProps> = ({
       marginBottom={marginBottom}
       marginTop={marginTop}
       size={size}
+      truncate={truncate}
+      height={height}
       onClick={onClick}
       {...props}
     >

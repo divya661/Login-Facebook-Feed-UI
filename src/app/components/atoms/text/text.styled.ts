@@ -16,6 +16,7 @@ const fontSizes: KeyValue = {
 };
 
 const StyledText = styled.p<Required<TextProps>>`
+  max-width: 100%;
   display: ${({ display }) => display};
   float: ${({ float }) => float};
   color: ${({ color }) => color};
@@ -28,6 +29,17 @@ const StyledText = styled.p<Required<TextProps>>`
   text-align: ${({ textAlign }) => textAlign};
   text-transform: ${({ isXXSmallAllUppercase, size }) =>
     size === "2xs" && isXXSmallAllUppercase ? "uppercase" : "none"};
+  height: ${({ height }) => height};
+  
+  ${({ truncate }) =>
+  truncate &&
+  `
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  `}
 `;
 
 export { StyledText, fontSizes };
