@@ -1,24 +1,12 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
 
-import { ThemeProvider } from '@emotion/react';
-import { Theme } from "@/app/contexts/ThemeContext";
+import { ThemeProvider, useTheme } from '@emotion/react';
 import "../styles/global.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
 
-  const theme: Theme = {
-    components: {
-      initialsAvatar: {
-        backgroundColor: 'lightblue',
-      },
-      compose: {
-        page: {
-          backgroundColor: '#131319',
-        }
-      },
-    },
-  };
+  const theme = useTheme();
 
   return (
     <>
