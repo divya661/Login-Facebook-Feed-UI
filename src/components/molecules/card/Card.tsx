@@ -4,7 +4,7 @@ type CardProps = {
   children: any;
   backgroundColor?: string;
   border: string;
-   borderRadius: string;
+  borderRadius: string;
   width: string;
   height: string;
   paddingY?: string;
@@ -25,7 +25,7 @@ const Card = ({
   paddingX = "0",
   marginY = "0",
   marginX = "0",
-  flexDirection="column",
+  flexDirection = "column",
   ...props
 }: CardProps) => {
   return (
