@@ -18,7 +18,7 @@ const StyledListFooter = styled.div`
 `;
 
 const StyledListItem = styled.div`
-  ${tw`box-border py-4 w-full`}
+  ${tw`box-border pb-[16px] w-full`}
   `;
 
 export {
