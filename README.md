@@ -7,6 +7,10 @@ First, run the development server:
 ```bash
 npm run dev
 ```
+create Build:
+```bash
+npm run build
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -24,3 +28,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Feed Page UI:
 ![Alt Feed](https://github.com/divya661/Atlys-Frontend-Interview-Challenge/blob/theme/screenshots/Feed%20Page.png?raw=true)
+
+## Build Output:
+![Alt Build Output](https://github.com/divya661/Atlys-Frontend-Interview-Challenge/blob/master/screenshots/Build%20output.png?raw=true)
