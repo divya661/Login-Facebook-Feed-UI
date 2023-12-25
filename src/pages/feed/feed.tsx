@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Text } from "@/components/atoms/text";
 import CreatePost from "./components/createPost/CreatePost";
 import Display from "./components/display/Display";
 import { Container } from "@/components/molecules/container";
