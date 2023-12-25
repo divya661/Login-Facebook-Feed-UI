@@ -22,10 +22,10 @@ const StyledPlaceholderIconContainer = styled.span<{
    padding:string;
    float:string;
  }>`
-    padding:${({ padding }) => padding ?? "0"};
-    margin: ${({ margin }) => margin ?? "0"};
-    display: flex;
-    float: ${({ float }) => float ?? "none" };
+   padding:${({ padding }) => padding ?? "0"};
+   margin: ${({ margin }) => margin ?? "0"};
+   display: flex;
+   float: ${({ float }) => float ?? "none" };
  `;
  
 export { StyledIcon,StyledPlaceholderIconContainer };

@@ -5,7 +5,7 @@ import { StyledIcon, StyledPlaceholderIconContainer } from './icon.styled';
 interface StyleIconProps {
     color?: string;
     size: string;
-    fontSize:string;
+    fontSize: string;
     padding?: string;
     margin?: string;
     borderRadius?: string;
@@ -27,9 +27,9 @@ const Icon: FunctionComponent<IconProps> = ({ icon, onClick, style, ...props }) 
 
     return (
         <StyledPlaceholderIconContainer padding={style.padding ?? "0"} margin={style.margin ?? "0"} float={style.float ?? "none"}>
-        <StyledIcon  {...style} onClick={onClick} {...props}>
-            {renderedIcon}
-        </StyledIcon>
+            <StyledIcon  {...style} onClick={onClick} {...props}>
+                {renderedIcon}
+            </StyledIcon>
         </StyledPlaceholderIconContainer>
 
     );
