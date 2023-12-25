@@ -1,8 +1,13 @@
+import { mockFeed } from "@/app/utils/mock_feed";
 import React from "react";
+import FeedItem from "./FeedItem";
 
 
 function Display() {
-    return <div>Display Feed List</div>;
+    const feedItem = mockFeed[0];
+    return (
+        <FeedItem {...feedItem}/>
+    );
 }
   
 export default Display;
