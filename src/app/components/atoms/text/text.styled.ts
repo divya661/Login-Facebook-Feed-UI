@@ -34,7 +34,8 @@ const StyledText = styled.p<Required<TextProps>>`
   ${({ truncate }) =>
   truncate &&
   `
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x:hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
