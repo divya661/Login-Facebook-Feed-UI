@@ -99,7 +99,7 @@ const Input = ({
         {...props}
       />
       {placeholderIcon?.icon && (
-          <Icon onClick={() => { }} icon={placeholderIcon.icon} style={placeholderIcon.style} />
+        <Icon onClick={() => { }} icon={placeholderIcon.icon} style={placeholderIcon.style} />
       )}
       {icon && (
         <Icon onClick={icon.onClick} icon={icon.icon} style={icon.style} />
