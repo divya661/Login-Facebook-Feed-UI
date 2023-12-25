@@ -13,6 +13,7 @@ npm run build
 ```
 
 Webapp: https://atlys-frontend-interview-challenge.vercel.app
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 #### Login Page URL: http://localhost:3000/login
