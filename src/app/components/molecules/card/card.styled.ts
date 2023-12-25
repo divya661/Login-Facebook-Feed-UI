@@ -5,9 +5,11 @@ import { CardProps } from './Card';
 
 const StyledCardContainer = styled.div<Required<CardProps>>`
    box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   flex-shrink:0;
    background-color: ${({ backgroundColor }) => backgroundColor ? backgroundColor : "white"};
-   border-width: ${({ borderWidth }) => borderWidth};
-   border-color: ${({ borderColor }) => borderColor};
+   border: ${({ border }) => border};
    border-radius: ${({ borderRadius }) => borderRadius};
    width: ${({ width }) => width};
    height: ${({ height }) => height};

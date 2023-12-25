@@ -3,9 +3,8 @@ import { StyledCardContainer } from "./card.styled";
 type CardProps = {
   children: any;
   backgroundColor?: string;
-  borderWidth: string;
-  borderColor: string;
-  borderRadius: string;
+  border: string;
+   borderRadius: string;
   width: string;
   height: string;
   paddingY?: string;
@@ -17,8 +16,7 @@ type CardProps = {
 const Card = ({
   children,
   backgroundColor = "white",
-  borderWidth,
-  borderColor,
+  border,
   borderRadius,
   width,
   height,
@@ -31,8 +29,7 @@ const Card = ({
   return (
     <StyledCardContainer
       backgroundColor={backgroundColor}
-      borderWidth={borderWidth}
-      borderColor={borderColor}
+      border={border}
       borderRadius={borderRadius}
       width={width}
       height={height}
