@@ -15,7 +15,7 @@ type ButtonProps = {
     disabled?: boolean;
     onClick: MouseEventHandler<Element>;
     type: "button" | "submit" | "reset";
-    float?:string;
+    float?: string;
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -28,9 +28,9 @@ const Button: FunctionComponent<ButtonProps> = ({
     borderRadius,
     borderColor,
     borderWidth,
-    float="none",
+    float = "none",
     type,
-    disabled=false,
+    disabled = false,
     onClick,
     ...props
 }) => {

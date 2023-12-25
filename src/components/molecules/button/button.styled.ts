@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
+
 import { ButtonProps } from "./Button";
 
-const StyledButton = styled.button<Required<ButtonProps>>`
+const StyledButton =
+  styled.button <
+  Required <
+  ButtonProps >>
+    `
    width: ${({ width }) => width};
    height: ${({ height }) => height};
    margin: ${({ margin }) => margin};
