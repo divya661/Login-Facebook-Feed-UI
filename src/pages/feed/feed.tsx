@@ -3,10 +3,15 @@ import React from "react";
 import { Text } from "@/components/atoms/text";
 import CreatePost from "./components/createPost/CreatePost";
 import Display from "./components/display/Display";
+import { Container } from "@/components/molecules/container";
+import { useTheme } from "@/contexts/ThemeContext";
 
 function Feed() {
+  const theme = useTheme();
+  const backgroundPrimaryColor = theme.components.page.colors.background.primary;
+
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center bg-theme-black pt-[70px]">
+        <Container display="flex"  flexDirection="column" backgroundColor={backgroundPrimaryColor} height="100vh" width="100vw" justifyContent="center" alignItems="center" paddingTop="70px">
       <section className="border-box w-[700px]" id="greatings">
         <Text color="#C5C7CA" fontWeight="500" size="4xl" textAlign="left">
           Hello Jane
@@ -23,7 +28,7 @@ function Feed() {
       <section className="w-[700px] mt-[16px] flex-grow-1 overflow-y-auto" id="feed">
         <Display />
       </section>
-    </div>
+    </Container>
   );
 }
 
