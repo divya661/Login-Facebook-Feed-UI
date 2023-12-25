@@ -4,6 +4,7 @@ import { StyledContentCard } from "./contentCard.styled";
 import { Card } from "@/components/molecules/card";
 import  ContentInfo  from "../contentInfo";
 import Mood  from "../mood";
+import { useTheme } from "@/contexts/ThemeContext";
 
 type ContentCardProps = {
     content: string,
@@ -15,10 +16,15 @@ const ContentCard = ({
     moodIcon,
     ...props
 }: ContentCardProps) => {
+    const theme = useTheme();
+    const backgroundSecondaryColor = theme.components.page.colors.background.secondary;
+    const backgroundTeritaryColor = theme.components.page.colors.background.teriatry;
+    const borderSecondaryColor = theme.components.page.colors.border.secondary;
+
     return (
         <StyledContentCard id="content" {...props}>
-            <Card width="100%" flexDirection="row" height="107px" borderRadius="8px" border="2px solid #35373B" paddingX="16px" paddingY="15px" marginY="20px" backgroundColor="#191920">
-                <Mood size="48px" backgroundColor="#27292D" border="0" borderRadius="50%" >{moodIcon}</Mood>
+            <Card width="100%" flexDirection="row" height="107px" borderRadius="8px" border={`2px solid ${borderSecondaryColor}`} paddingX="16px" paddingY="15px" marginY="20px" backgroundColor={backgroundTeritaryColor}>
+                <Mood size="48px" backgroundColor={backgroundSecondaryColor} border="0" borderRadius="50%" >{moodIcon}</Mood>
                 <ContentInfo content={content}></ContentInfo>
             </Card>
         </StyledContentCard>

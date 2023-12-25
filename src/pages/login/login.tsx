@@ -24,6 +24,13 @@ const Login = () => {
 
     const router = useRouter();
     const theme = useTheme();
+    const backgroundPrimaryColor = theme.components.page.colors.background.primary;
+    const backgroundSecondaryColor = theme.components.page.colors.background.secondary;
+    const textPrimaryColor = theme.components.page.colors.text.primary;
+    const textSecondaryColor = theme.components.page.colors.text.secondary;
+    const textTeriatryColor = theme.components.page.colors.text.teriatry;
+    const buttonPrimaryColor = theme.components.page.colors.button.primary;
+    const borderPrimaryColor = theme.components.page.colors.border.primary;
 
     const submit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -63,17 +70,11 @@ const Login = () => {
         );
     }
 
-    const backgroundPrimaryColor = theme.components.page.colors.background.primary;
-    const backgroundSecondaryColor = theme.components.page.colors.background.secondary;
-    const textPrimaryColor = theme.components.page.colors.text.primary;
-    const textSecondaryColor = theme.components.page.colors.text.secondary;
-    const textTeriatryColor = theme.components.page.colors.text.teriatry;
-
     return (
         <Container display="flex"  flexDirection="column" backgroundColor={backgroundPrimaryColor} height="100vh" width="100vw" justifyContent="center" alignItems="center">
             <LogoContainer marginBottom="49px"></LogoContainer>
             <Form width="463px" onSubmit={submit}>
-                <Card backgroundColor={backgroundSecondaryColor} border="2px solid #969696" borderRadius="8px" width="inherit" height="420px" paddingY="38px" paddingX="24px" >
+                <Card backgroundColor={backgroundSecondaryColor} border={`2px solid ${borderPrimaryColor}`} borderRadius="8px" width="inherit" height="420px" paddingY="38px" paddingX="24px" >
                   <Header paddingBottom="30px" textTeriatryColor={textTeriatryColor}></Header>
                     <Input
                         id="Username"
@@ -112,10 +113,10 @@ const Login = () => {
                                 fontSize: "20px"
                             }
                         }}
-                        helpOrInfoLink={{ text: "Forgot Password?", href: "/forgotPassword", style: { color: "#C5C7CA", textDecoration: "none", fontWeight: "500", size: "xs" } }}
+                        helpOrInfoLink={{ text: "Forgot Password?", href: "/forgotPassword", style: { color: textPrimaryColor, textDecoration: "none", fontWeight: "500", size: "xs" } }}
                     />
-                    <Button onClick={(e) => { }} disabled={!!(errorPassword || errorUsernameOrEmail)} type="submit" width="100%" height="43px" backGroundColor="#4A96FF" borderRadius="4px" padding="12px" margin="10px 0 10px 0">
-                        <Text color="#FFF" fontWeight="500" size="md" textAlign="center" display="inline-block">
+                    <Button onClick={(e) => { }} disabled={!!(errorPassword || errorUsernameOrEmail)} type="submit" width="100%" height="43px" backGroundColor={buttonPrimaryColor} borderRadius="4px" padding="12px" margin="10px 0 10px 0">
+                        <Text color={textTeriatryColor} fontWeight="500" size="md" textAlign="center" display="inline-block">
                             Login Now
                         </Text>
                     </Button>

@@ -16,6 +16,13 @@ export interface Theme {
           primary: string;
           secondary: string;
           teriatry: string;
+        },
+        button:{
+          primary: string;
+        },
+        border:{
+          primary:string;
+          secondary:string;
         }
       }
     };
@@ -35,6 +42,13 @@ const defaultTheme: Theme = {
           primary: "#C5C7CA",
           secondary: "#7F8084",
           teriatry: "#FFF",
+        },
+        button:{
+          primary:"#4A96FF",
+        },
+        border:{
+          primary:"#969696",
+          secondary: "#35373B"
         }
       }
     },

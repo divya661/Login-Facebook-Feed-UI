@@ -1,12 +1,14 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
+import { ThemeProvider } from '@emotion/react';
 
-import { ThemeProvider, useTheme } from '@emotion/react';
 import "../global.css";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const App = ({ Component, pageProps }: AppProps) => {
 
   const theme = useTheme();
+  const textTeriatryColor = theme.components.page.colors.text.teriatry;
 
   return (
     <>
@@ -23,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           href="/favicon.ico"
         />
         <link rel="manifest" href="/favicon/site.webmanifest"></link>
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content={textTeriatryColor}></meta>
 
         <title> Login Feed - Atlys</title>
         <meta name="robots" content="noindex, nofollow" />
