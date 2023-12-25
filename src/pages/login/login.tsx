@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
-import { Logo } from "@/components/atoms/logo";
 import { Text } from "@/components/atoms/text";
 import { Card } from "@/components/molecules/card";
 import { Input } from "@/components/molecules/input";
@@ -10,7 +9,10 @@ import { Button } from "@/components/molecules/button";
 import { InputType } from "@/enums/input";
 import { useRouter } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
-
+import { Form } from "@/components/molecules/form";
+import {LogoContainer} from "./logoContainer/LogoContainer";
+import { Header } from "./header";
+import { Container } from "@/components/molecules/container";
 
 const Login = () => {
     const [usernameOrEmail, setUsernameOrEmail] = useState<string>("");
@@ -69,15 +71,10 @@ const Login = () => {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen w-screen bg-theme-black ">
-            <div className="mb-[49px]">
-                <Logo />
-            </div>
-            <form className=" " onSubmit={submit}>
+            <LogoContainer marginBottom="49px"></LogoContainer>
+            <Form onSubmit={submit}>
                 <Card backgroundColor={backgroundSecondaryColor} border="2px solid #969696" borderRadius="8px" width="463px" height="420px" paddingY="38px" paddingX="24px" >
-                    <div className="pb-[30px]">
-                        <Text color="#6B6C70" fontWeight="500" size="sm" textAlign="center">WELCOME BACK</Text>
-                        <Text color={textTeriatryColor} fontWeight="600" size="lg" textAlign="center" marginTop="8px">Log into your account</Text>
-                    </div>
+                  <Header paddingBottom="30px" textTeriatryColor={textTeriatryColor}></Header>
                     <Input
                         id="Username"
                         name="Username"
@@ -122,12 +119,12 @@ const Login = () => {
                             Login Now
                         </Text>
                     </Button>
-                    <div className="block">
+                    <Container display="block">
                         <Text color={textSecondaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Not registered yet? </Text>
                         <Text color={textPrimaryColor} fontWeight="500" size="sm" textAlign="left" display="inline">Register →</Text>
-                    </div>
+                    </Container>
                 </Card>
-            </form>
+            </Form>
         </div>
     );
 };
