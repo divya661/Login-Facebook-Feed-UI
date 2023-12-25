@@ -1,6 +1,4 @@
-// ThemeContext.ts
-
-import { createContext } from 'react';
+import  { createContext, useContext } from 'react';
 
 export interface Theme {
   components: {
@@ -9,7 +7,18 @@ export interface Theme {
     };
     compose: {
       page: {
-        backgroundColor: string;
+        colors: {
+          background: {
+            primary: string;
+            secondary: string;
+            teriatry: string;
+          },
+          text: {
+            primary: string;
+            secondary: string;
+            teriatry: string;
+          }
+        }
       };
     };
   };
@@ -17,17 +26,29 @@ export interface Theme {
 
 const defaultTheme: Theme = {
   components: {
-    initialsAvatar: {
-      backgroundColor: 'lightblue',
-    },
     compose: {
       page: {
-        backgroundColor: '#131319',
-      }
+        colors: {
+          background: {
+            primary: "#131319",
+            secondary: "#27292D",
+            teriatry: "#191920",
+          },
+          text: {
+            primary: "#C5C7CA",
+            secondary: "#7F8084",
+            teriatry: "#FFF",
+          }
+        }
+      },
+    },
+    initialsAvatar: {
+      backgroundColor: 'black',
     },
   },
 };
 
-const ThemeContext = createContext<Theme>(defaultTheme);
+export const ThemeContext = createContext<Theme>(defaultTheme);
 
-export default ThemeContext;
+// Create a hook to use the theme
+export const useTheme = (): Theme => useContext(ThemeContext);
