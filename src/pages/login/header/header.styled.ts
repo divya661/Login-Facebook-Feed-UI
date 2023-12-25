@@ -7,6 +7,9 @@ const StyledHeader =
   HeaderProps >>
     `
   display: flex;
+  flex-direction:column;
+  justify-content: center;
+  text-align: center;
   padding-bottom: ${({ paddingBottom }) => paddingBottom};
 `;
 
