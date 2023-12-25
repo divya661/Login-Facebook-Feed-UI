@@ -43,9 +43,9 @@ const FeedItem = ({ avatar, personName, postTime, edited, content, commentsCount
             <section id="content">
                 <Card width="100%" flexDirection="row" height="107px" borderRadius="8px" border="2px solid #35373B" paddingX="16px" paddingY="15px" marginY="20px" backgroundColor="#191920">
                     <Feeling size="48px" backgroundColor="#27292D" border="0" borderRadius="50%" >{feelingIcon}</Feeling>
-                    <div className="pl-[16px]">
-                        <Text color="#7F8084" fontWeight="500" size="md" lineHeight="150%" textAlign="left">{content}</Text>
-                    </div>
+                    <div className="pl-[16px] h-[75px]">
+                        <Text color="#7F8084" fontWeight="500" size="md" lineHeight="150%" textAlign="left" display="block" height="100%" truncate={true}>{content}</Text>
+                    </div> 
                 </Card>
             </section>
             <section id="feed_item_footer" className="flex -mt-[6px]">
@@ -59,4 +59,5 @@ const FeedItem = ({ avatar, personName, postTime, edited, content, commentsCount
     );
 }
 
-export default FeedItem;
+export  {FeedItem};
+export type {FeedItemProps};
