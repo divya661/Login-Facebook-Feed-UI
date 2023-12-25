@@ -4,7 +4,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: Inter;
+    font-family: 'Inter';
 }
 
 :root {
@@ -16,7 +16,3 @@
     --text-teriatry: "#FFF";
   }
 
-
-body {
-  font-family: Inter;
-}
