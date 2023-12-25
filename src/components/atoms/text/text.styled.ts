@@ -16,7 +16,6 @@ const fontSizes: KeyValue = {
 
 const StyledText = styled.p<Required<TextProps>>`
   max-width: 100%;
-  font-family: Inter;
   display: ${({ display }) => display};
   float: ${({ float }) => float};
   color: ${({ color }) => color};
