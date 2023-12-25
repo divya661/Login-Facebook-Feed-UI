@@ -5,12 +5,13 @@ import { Text } from "@/components/atoms/text";
 import { Input } from "@/components/molecules/input";
 import { Button } from "@/components/molecules/button";
 import { ERROR_POST_CONTENT_MIN_LENGTH, POST_CONTENT_MIN_LENGTH } from "@/constants/post";
+import { Form } from "@/components/molecules/form";
 
 function CreatePost() {
     const [postContent, setPostContent] = useState<string>("");
     const [errorPostContent, setErrorPostContent] = useState<string>("");
 
-    const submit = async (e: FormEvent<HTMLFormElement>) => {
+    const submit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!errorPostContent.length) {
             alert("Post Submitted Successfully!");
@@ -29,7 +30,7 @@ function CreatePost() {
     }
 
     return (
-        <form className="flex flex-col" onSubmit={submit}>
+        <Form onSubmit={submit}>
             <Card width="100%" height="223px" borderRadius="8px" border="2px solid #35373B" paddingX="20px" paddingY="24px" backgroundColor="#27292D">
 
                 <Input
@@ -74,7 +75,7 @@ function CreatePost() {
                 </Button>
 
             </Card>
-        </form>
+        </Form>
     );
 }
 
