@@ -1,1 +1,1 @@
-export * from "./LogoContainer";
+export { default } from "./LogoContainer";
