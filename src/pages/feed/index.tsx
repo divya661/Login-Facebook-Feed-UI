@@ -7,7 +7,7 @@ import Display from "./components/display/Display";
 
 function Feed() {
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center bg-theme-black ">
+        <div className="w-screen h-screen flex flex-col items-center justify-center bg-theme-black pt-[70px]">
             <section className="border-box w-[700px]" id="greatings">
                 <Text color="#C5C7CA" fontWeight="500" size="4xl" textAlign="left">Hello Jane</Text>
                 <div className="w-[580px] mt-[12px]">
